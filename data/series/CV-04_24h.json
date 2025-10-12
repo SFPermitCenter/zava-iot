@@ -1,0 +1,1307 @@
+[
+  {
+    "tsUtc": "2025-10-11T20:57:00Z",
+    "temperatureC": 23.86,
+    "vibration": 0.77,
+    "currentA": 5.22,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T21:07:00Z",
+    "temperatureC": 24.15,
+    "vibration": 0.92,
+    "currentA": 5.06,
+    "healthScore": 99.5,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T21:17:00Z",
+    "temperatureC": 24.75,
+    "vibration": 0.99,
+    "currentA": 7.8,
+    "healthScore": 93.4,
+    "failureProb": 0.039,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T21:27:00Z",
+    "temperatureC": 24.95,
+    "vibration": 0.73,
+    "currentA": 5.55,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T21:37:00Z",
+    "temperatureC": 24.38,
+    "vibration": 1.09,
+    "currentA": 4.85,
+    "healthScore": 95.6,
+    "failureProb": 0.049,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T21:47:00Z",
+    "temperatureC": 24.6,
+    "vibration": 0.77,
+    "currentA": 4.22,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T21:57:00Z",
+    "temperatureC": 25.3,
+    "vibration": 0.92,
+    "currentA": 4.26,
+    "healthScore": 99.4,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T22:07:00Z",
+    "temperatureC": 25.31,
+    "vibration": 0.89,
+    "currentA": 6.72,
+    "healthScore": 97.5,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T22:17:00Z",
+    "temperatureC": 26.18,
+    "vibration": 0.75,
+    "currentA": 6.67,
+    "healthScore": 97.7,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T22:27:00Z",
+    "temperatureC": 25.07,
+    "vibration": 0.92,
+    "currentA": 5.19,
+    "healthScore": 99.5,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T22:37:00Z",
+    "temperatureC": 25.64,
+    "vibration": 1.14,
+    "currentA": 6.33,
+    "healthScore": 94.2,
+    "failureProb": 0.054,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T22:47:00Z",
+    "temperatureC": 25.75,
+    "vibration": 1.12,
+    "currentA": 3.86,
+    "healthScore": 95.0,
+    "failureProb": 0.052,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T22:57:00Z",
+    "temperatureC": 26.79,
+    "vibration": 0.96,
+    "currentA": 4.48,
+    "healthScore": 98.7,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T23:07:00Z",
+    "temperatureC": 26.92,
+    "vibration": 0.96,
+    "currentA": 5.48,
+    "healthScore": 98.5,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T23:17:00Z",
+    "temperatureC": 27.81,
+    "vibration": 0.85,
+    "currentA": 5.26,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T23:27:00Z",
+    "temperatureC": 28.29,
+    "vibration": 0.93,
+    "currentA": 5.85,
+    "healthScore": 99.4,
+    "failureProb": 0.033,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T23:37:00Z",
+    "temperatureC": 27.27,
+    "vibration": 0.92,
+    "currentA": 7.35,
+    "healthScore": 95.3,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T23:47:00Z",
+    "temperatureC": 28.45,
+    "vibration": 1.21,
+    "currentA": 6.96,
+    "healthScore": 92.0,
+    "failureProb": 0.061,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-11T23:57:00Z",
+    "temperatureC": 26.73,
+    "vibration": 0.92,
+    "currentA": 6.14,
+    "healthScore": 99.4,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T00:07:00Z",
+    "temperatureC": 30.57,
+    "vibration": 1.0,
+    "currentA": 2.7,
+    "healthScore": 97.0,
+    "failureProb": 0.043,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T00:17:00Z",
+    "temperatureC": 29.96,
+    "vibration": 0.65,
+    "currentA": 5.15,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T00:27:00Z",
+    "temperatureC": 30.62,
+    "vibration": 1.1,
+    "currentA": 3.87,
+    "healthScore": 94.9,
+    "failureProb": 0.054,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T00:37:00Z",
+    "temperatureC": 29.72,
+    "vibration": 1.15,
+    "currentA": 7.06,
+    "healthScore": 93.2,
+    "failureProb": 0.055,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T00:47:00Z",
+    "temperatureC": 30.35,
+    "vibration": 0.92,
+    "currentA": 5.96,
+    "healthScore": 98.7,
+    "failureProb": 0.034,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T00:57:00Z",
+    "temperatureC": 29.88,
+    "vibration": 1.11,
+    "currentA": 5.57,
+    "healthScore": 95.1,
+    "failureProb": 0.051,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T01:07:00Z",
+    "temperatureC": 32.56,
+    "vibration": 1.14,
+    "currentA": 5.56,
+    "healthScore": 89.5,
+    "failureProb": 0.07,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T01:17:00Z",
+    "temperatureC": 31.66,
+    "vibration": 0.9,
+    "currentA": 5.66,
+    "healthScore": 94.2,
+    "failureProb": 0.04,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T01:27:00Z",
+    "temperatureC": 31.33,
+    "vibration": 1.15,
+    "currentA": 7.78,
+    "healthScore": 90.2,
+    "failureProb": 0.064,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T01:37:00Z",
+    "temperatureC": 31.89,
+    "vibration": 1.15,
+    "currentA": 6.2,
+    "healthScore": 91.1,
+    "failureProb": 0.067,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T01:47:00Z",
+    "temperatureC": 31.49,
+    "vibration": 1.17,
+    "currentA": 5.33,
+    "healthScore": 91.9,
+    "failureProb": 0.066,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T01:57:00Z",
+    "temperatureC": 30.9,
+    "vibration": 0.56,
+    "currentA": 5.99,
+    "healthScore": 96.9,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T02:07:00Z",
+    "temperatureC": 33.35,
+    "vibration": 1.04,
+    "currentA": 6.31,
+    "healthScore": 87.7,
+    "failureProb": 0.065,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T02:17:00Z",
+    "temperatureC": 34.57,
+    "vibration": 1.12,
+    "currentA": 7.17,
+    "healthScore": 82.7,
+    "failureProb": 0.081,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T02:27:00Z",
+    "temperatureC": 32.49,
+    "vibration": 0.92,
+    "currentA": 6.54,
+    "healthScore": 91.1,
+    "failureProb": 0.048,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T02:37:00Z",
+    "temperatureC": 35.03,
+    "vibration": 1.04,
+    "currentA": 5.8,
+    "healthScore": 82.1,
+    "failureProb": 0.076,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T02:47:00Z",
+    "temperatureC": 34.29,
+    "vibration": 1.02,
+    "currentA": 6.01,
+    "healthScore": 84.7,
+    "failureProb": 0.069,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T02:57:00Z",
+    "temperatureC": 33.35,
+    "vibration": 0.83,
+    "currentA": 7.32,
+    "healthScore": 87.4,
+    "failureProb": 0.051,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T03:07:00Z",
+    "temperatureC": 35.17,
+    "vibration": 0.99,
+    "currentA": 6.98,
+    "healthScore": 81.5,
+    "failureProb": 0.071,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T03:17:00Z",
+    "temperatureC": 35.97,
+    "vibration": 1.1,
+    "currentA": 7.72,
+    "healthScore": 77.8,
+    "failureProb": 0.088,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T03:27:00Z",
+    "temperatureC": 36.29,
+    "vibration": 1.05,
+    "currentA": 6.56,
+    "healthScore": 77.6,
+    "failureProb": 0.084,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T03:37:00Z",
+    "temperatureC": 35.15,
+    "vibration": 0.88,
+    "currentA": 5.39,
+    "healthScore": 82.0,
+    "failureProb": 0.062,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T03:47:00Z",
+    "temperatureC": 35.68,
+    "vibration": 1.15,
+    "currentA": 6.94,
+    "healthScore": 79.1,
+    "failureProb": 0.09,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T03:57:00Z",
+    "temperatureC": 35.76,
+    "vibration": 0.89,
+    "currentA": 5.14,
+    "healthScore": 79.8,
+    "failureProb": 0.066,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T04:07:00Z",
+    "temperatureC": 36.24,
+    "vibration": 1.0,
+    "currentA": 7.24,
+    "healthScore": 77.6,
+    "failureProb": 0.079,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T04:17:00Z",
+    "temperatureC": 36.59,
+    "vibration": 0.95,
+    "currentA": 8.21,
+    "healthScore": 75.7,
+    "failureProb": 0.076,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T04:27:00Z",
+    "temperatureC": 36.97,
+    "vibration": 1.25,
+    "currentA": 5.32,
+    "healthScore": 74.3,
+    "failureProb": 0.108,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T04:37:00Z",
+    "temperatureC": 36.09,
+    "vibration": 1.16,
+    "currentA": 6.07,
+    "healthScore": 77.9,
+    "failureProb": 0.094,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T04:47:00Z",
+    "temperatureC": 34.8,
+    "vibration": 1.19,
+    "currentA": 6.78,
+    "healthScore": 81.7,
+    "failureProb": 0.089,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T04:57:00Z",
+    "temperatureC": 36.69,
+    "vibration": 0.95,
+    "currentA": 5.87,
+    "healthScore": 76.5,
+    "failureProb": 0.077,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T05:07:00Z",
+    "temperatureC": 37.65,
+    "vibration": 0.96,
+    "currentA": 8.28,
+    "healthScore": 72.0,
+    "failureProb": 0.083,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T05:17:00Z",
+    "temperatureC": 37.06,
+    "vibration": 0.99,
+    "currentA": 8.55,
+    "healthScore": 73.6,
+    "failureProb": 0.083,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T05:27:00Z",
+    "temperatureC": 37.21,
+    "vibration": 1.05,
+    "currentA": 8.75,
+    "healthScore": 72.8,
+    "failureProb": 0.09,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T05:37:00Z",
+    "temperatureC": 37.41,
+    "vibration": 0.94,
+    "currentA": 9.89,
+    "healthScore": 70.7,
+    "failureProb": 0.081,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T05:47:00Z",
+    "temperatureC": 38.12,
+    "vibration": 0.62,
+    "currentA": 5.52,
+    "healthScore": 71.6,
+    "failureProb": 0.081,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T05:57:00Z",
+    "temperatureC": 37.33,
+    "vibration": 1.23,
+    "currentA": 8.92,
+    "healthScore": 71.3,
+    "failureProb": 0.109,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T06:07:00Z",
+    "temperatureC": 37.69,
+    "vibration": 1.03,
+    "currentA": 6.48,
+    "healthScore": 72.9,
+    "failureProb": 0.091,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T06:17:00Z",
+    "temperatureC": 37.53,
+    "vibration": 0.75,
+    "currentA": 6.36,
+    "healthScore": 73.6,
+    "failureProb": 0.077,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T06:27:00Z",
+    "temperatureC": 37.07,
+    "vibration": 0.83,
+    "currentA": 7.85,
+    "healthScore": 74.4,
+    "failureProb": 0.074,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T06:37:00Z",
+    "temperatureC": 38.09,
+    "vibration": 1.05,
+    "currentA": 6.44,
+    "healthScore": 71.4,
+    "failureProb": 0.096,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T06:47:00Z",
+    "temperatureC": 37.22,
+    "vibration": 0.79,
+    "currentA": 8.17,
+    "healthScore": 73.6,
+    "failureProb": 0.075,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T06:57:00Z",
+    "temperatureC": 36.91,
+    "vibration": 0.93,
+    "currentA": 8.11,
+    "healthScore": 74.7,
+    "failureProb": 0.076,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T07:07:00Z",
+    "temperatureC": 36.15,
+    "vibration": 0.91,
+    "currentA": 6.61,
+    "healthScore": 78.4,
+    "failureProb": 0.069,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T07:17:00Z",
+    "temperatureC": 36.97,
+    "vibration": 0.98,
+    "currentA": 6.99,
+    "healthScore": 75.3,
+    "failureProb": 0.082,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T07:27:00Z",
+    "temperatureC": 37.0,
+    "vibration": 0.7,
+    "currentA": 9.36,
+    "healthScore": 72.8,
+    "failureProb": 0.074,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T07:37:00Z",
+    "temperatureC": 37.25,
+    "vibration": 1.26,
+    "currentA": 9.46,
+    "healthScore": 70.7,
+    "failureProb": 0.111,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T07:47:00Z",
+    "temperatureC": 38.24,
+    "vibration": 0.74,
+    "currentA": 3.89,
+    "healthScore": 71.2,
+    "failureProb": 0.081,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T07:57:00Z",
+    "temperatureC": 36.91,
+    "vibration": 0.7,
+    "currentA": 7.48,
+    "healthScore": 75.3,
+    "failureProb": 0.073,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T08:07:00Z",
+    "temperatureC": 36.25,
+    "vibration": 1.1,
+    "currentA": 12.05,
+    "healthScore": 69.2,
+    "failureProb": 0.089,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T08:17:00Z",
+    "temperatureC": 36.9,
+    "vibration": 1.09,
+    "currentA": 8.09,
+    "healthScore": 74.4,
+    "failureProb": 0.092,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T08:27:00Z",
+    "temperatureC": 36.67,
+    "vibration": 0.68,
+    "currentA": 8.0,
+    "healthScore": 75.6,
+    "failureProb": 0.072,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T08:37:00Z",
+    "temperatureC": 36.6,
+    "vibration": 0.67,
+    "currentA": 7.89,
+    "healthScore": 76.0,
+    "failureProb": 0.071,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T08:47:00Z",
+    "temperatureC": 36.53,
+    "vibration": 0.55,
+    "currentA": 6.58,
+    "healthScore": 77.1,
+    "failureProb": 0.071,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T08:57:00Z",
+    "temperatureC": 36.94,
+    "vibration": 0.77,
+    "currentA": 7.61,
+    "healthScore": 75.1,
+    "failureProb": 0.073,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T09:07:00Z",
+    "temperatureC": 35.8,
+    "vibration": 1.22,
+    "currentA": 7.25,
+    "healthScore": 77.9,
+    "failureProb": 0.099,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T09:17:00Z",
+    "temperatureC": 36.05,
+    "vibration": 1.1,
+    "currentA": 6.19,
+    "healthScore": 78.3,
+    "failureProb": 0.088,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T09:27:00Z",
+    "temperatureC": 35.61,
+    "vibration": 0.94,
+    "currentA": 5.81,
+    "healthScore": 80.3,
+    "failureProb": 0.069,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T09:37:00Z",
+    "temperatureC": 36.34,
+    "vibration": 0.88,
+    "currentA": 7.09,
+    "healthScore": 77.5,
+    "failureProb": 0.07,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T09:47:00Z",
+    "temperatureC": 35.27,
+    "vibration": 0.82,
+    "currentA": 7.72,
+    "healthScore": 80.6,
+    "failureProb": 0.063,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T09:57:00Z",
+    "temperatureC": 34.72,
+    "vibration": 0.84,
+    "currentA": 5.31,
+    "healthScore": 83.5,
+    "failureProb": 0.06,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T10:07:00Z",
+    "temperatureC": 33.52,
+    "vibration": 0.88,
+    "currentA": 5.01,
+    "healthScore": 87.7,
+    "failureProb": 0.052,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T10:17:00Z",
+    "temperatureC": 34.28,
+    "vibration": 0.72,
+    "currentA": 4.95,
+    "healthScore": 85.0,
+    "failureProb": 0.057,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T10:27:00Z",
+    "temperatureC": 33.84,
+    "vibration": 0.97,
+    "currentA": 6.47,
+    "healthScore": 86.4,
+    "failureProb": 0.061,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T10:37:00Z",
+    "temperatureC": 33.4,
+    "vibration": 0.74,
+    "currentA": 5.62,
+    "healthScore": 88.1,
+    "failureProb": 0.051,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T10:47:00Z",
+    "temperatureC": 33.45,
+    "vibration": 0.53,
+    "currentA": 7.27,
+    "healthScore": 87.1,
+    "failureProb": 0.052,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T10:57:00Z",
+    "temperatureC": 32.58,
+    "vibration": 0.88,
+    "currentA": 7.4,
+    "healthScore": 89.7,
+    "failureProb": 0.046,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T11:07:00Z",
+    "temperatureC": 33.18,
+    "vibration": 1.0,
+    "currentA": 4.83,
+    "healthScore": 88.6,
+    "failureProb": 0.06,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T11:17:00Z",
+    "temperatureC": 32.05,
+    "vibration": 0.95,
+    "currentA": 7.09,
+    "healthScore": 91.8,
+    "failureProb": 0.047,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T11:27:00Z",
+    "temperatureC": 31.38,
+    "vibration": 0.68,
+    "currentA": 5.89,
+    "healthScore": 95.2,
+    "failureProb": 0.039,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T11:37:00Z",
+    "temperatureC": 30.88,
+    "vibration": 0.88,
+    "currentA": 5.16,
+    "healthScore": 96.9,
+    "failureProb": 0.035,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T11:47:00Z",
+    "temperatureC": 31.99,
+    "vibration": 1.01,
+    "currentA": 5.25,
+    "healthScore": 92.6,
+    "failureProb": 0.053,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T11:57:00Z",
+    "temperatureC": 32.28,
+    "vibration": 1.03,
+    "currentA": 7.75,
+    "healthScore": 89.5,
+    "failureProb": 0.057,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T12:07:00Z",
+    "temperatureC": 29.63,
+    "vibration": 0.92,
+    "currentA": 6.62,
+    "healthScore": 97.8,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T12:17:00Z",
+    "temperatureC": 30.34,
+    "vibration": 0.95,
+    "currentA": 5.89,
+    "healthScore": 98.3,
+    "failureProb": 0.037,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T12:27:00Z",
+    "temperatureC": 30.64,
+    "vibration": 0.48,
+    "currentA": 6.63,
+    "healthScore": 96.9,
+    "failureProb": 0.034,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T12:37:00Z",
+    "temperatureC": 30.45,
+    "vibration": 0.81,
+    "currentA": 7.04,
+    "healthScore": 96.0,
+    "failureProb": 0.033,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T12:47:00Z",
+    "temperatureC": 30.24,
+    "vibration": 0.53,
+    "currentA": 4.64,
+    "healthScore": 99.2,
+    "failureProb": 0.032,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T12:57:00Z",
+    "temperatureC": 29.57,
+    "vibration": 0.77,
+    "currentA": 4.69,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T13:07:00Z",
+    "temperatureC": 29.36,
+    "vibration": 0.78,
+    "currentA": 4.62,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T13:17:00Z",
+    "temperatureC": 28.28,
+    "vibration": 0.85,
+    "currentA": 6.38,
+    "healthScore": 98.7,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T13:27:00Z",
+    "temperatureC": 28.02,
+    "vibration": 0.69,
+    "currentA": 6.22,
+    "healthScore": 99.2,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T13:37:00Z",
+    "temperatureC": 27.42,
+    "vibration": 0.93,
+    "currentA": 6.15,
+    "healthScore": 99.1,
+    "failureProb": 0.033,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T13:47:00Z",
+    "temperatureC": 27.83,
+    "vibration": 0.99,
+    "currentA": 2.49,
+    "healthScore": 97.9,
+    "failureProb": 0.039,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T13:57:00Z",
+    "temperatureC": 27.77,
+    "vibration": 0.67,
+    "currentA": 5.82,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T14:07:00Z",
+    "temperatureC": 26.35,
+    "vibration": 0.68,
+    "currentA": 5.66,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T14:17:00Z",
+    "temperatureC": 26.17,
+    "vibration": 0.89,
+    "currentA": 6.64,
+    "healthScore": 97.8,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T14:27:00Z",
+    "temperatureC": 26.62,
+    "vibration": 0.5,
+    "currentA": 4.69,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T14:37:00Z",
+    "temperatureC": 26.68,
+    "vibration": 0.95,
+    "currentA": 6.02,
+    "healthScore": 98.8,
+    "failureProb": 0.035,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T14:47:00Z",
+    "temperatureC": 26.65,
+    "vibration": 0.68,
+    "currentA": 6.23,
+    "healthScore": 99.2,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T14:57:00Z",
+    "temperatureC": 26.1,
+    "vibration": 0.86,
+    "currentA": 5.58,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T15:07:00Z",
+    "temperatureC": 23.66,
+    "vibration": 0.73,
+    "currentA": 4.58,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T15:17:00Z",
+    "temperatureC": 25.74,
+    "vibration": 0.7,
+    "currentA": 4.77,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T15:27:00Z",
+    "temperatureC": 24.25,
+    "vibration": 1.02,
+    "currentA": 4.3,
+    "healthScore": 97.2,
+    "failureProb": 0.042,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T15:37:00Z",
+    "temperatureC": 24.87,
+    "vibration": 0.88,
+    "currentA": 4.76,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T15:47:00Z",
+    "temperatureC": 24.7,
+    "vibration": 0.77,
+    "currentA": 3.24,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T15:57:00Z",
+    "temperatureC": 25.36,
+    "vibration": 0.94,
+    "currentA": 6.06,
+    "healthScore": 99.0,
+    "failureProb": 0.034,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T16:07:00Z",
+    "temperatureC": 22.2,
+    "vibration": 0.84,
+    "currentA": 3.37,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T16:17:00Z",
+    "temperatureC": 23.81,
+    "vibration": 0.87,
+    "currentA": 5.05,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T16:27:00Z",
+    "temperatureC": 22.66,
+    "vibration": 0.86,
+    "currentA": 6.49,
+    "healthScore": 98.3,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T16:37:00Z",
+    "temperatureC": 23.56,
+    "vibration": 0.73,
+    "currentA": 5.09,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T16:47:00Z",
+    "temperatureC": 22.97,
+    "vibration": 0.9,
+    "currentA": 4.51,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T16:57:00Z",
+    "temperatureC": 24.35,
+    "vibration": 1.06,
+    "currentA": 5.05,
+    "healthScore": 96.3,
+    "failureProb": 0.046,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T17:07:00Z",
+    "temperatureC": 23.66,
+    "vibration": 0.54,
+    "currentA": 3.64,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T17:17:00Z",
+    "temperatureC": 23.25,
+    "vibration": 0.86,
+    "currentA": 2.56,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T17:27:00Z",
+    "temperatureC": 23.26,
+    "vibration": 0.84,
+    "currentA": 4.5,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T17:37:00Z",
+    "temperatureC": 22.39,
+    "vibration": 0.73,
+    "currentA": 5.18,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T17:47:00Z",
+    "temperatureC": 23.54,
+    "vibration": 0.97,
+    "currentA": 5.22,
+    "healthScore": 98.5,
+    "failureProb": 0.037,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T17:57:00Z",
+    "temperatureC": 23.47,
+    "vibration": 0.96,
+    "currentA": 3.28,
+    "healthScore": 98.5,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T18:07:00Z",
+    "temperatureC": 23.4,
+    "vibration": 0.84,
+    "currentA": 4.08,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T18:17:00Z",
+    "temperatureC": 22.67,
+    "vibration": 0.61,
+    "currentA": 2.84,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T18:27:00Z",
+    "temperatureC": 22.04,
+    "vibration": 0.79,
+    "currentA": 4.63,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T18:37:00Z",
+    "temperatureC": 22.88,
+    "vibration": 1.13,
+    "currentA": 6.91,
+    "healthScore": 93.8,
+    "failureProb": 0.053,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T18:47:00Z",
+    "temperatureC": 22.16,
+    "vibration": 1.33,
+    "currentA": 5.4,
+    "healthScore": 90.0,
+    "failureProb": 0.073,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T18:57:00Z",
+    "temperatureC": 21.66,
+    "vibration": 1.12,
+    "currentA": 5.01,
+    "healthScore": 95.0,
+    "failureProb": 0.052,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T19:07:00Z",
+    "temperatureC": 22.3,
+    "vibration": 0.88,
+    "currentA": 5.33,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T19:17:00Z",
+    "temperatureC": 22.42,
+    "vibration": 0.63,
+    "currentA": 4.89,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T19:27:00Z",
+    "temperatureC": 23.46,
+    "vibration": 1.05,
+    "currentA": 3.57,
+    "healthScore": 96.4,
+    "failureProb": 0.045,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T19:37:00Z",
+    "temperatureC": 21.7,
+    "vibration": 0.96,
+    "currentA": 4.88,
+    "healthScore": 98.5,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T19:47:00Z",
+    "temperatureC": 22.53,
+    "vibration": 0.96,
+    "currentA": 4.71,
+    "healthScore": 98.6,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T19:57:00Z",
+    "temperatureC": 22.74,
+    "vibration": 1.09,
+    "currentA": 3.02,
+    "healthScore": 95.6,
+    "failureProb": 0.049,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T20:07:00Z",
+    "temperatureC": 23.45,
+    "vibration": 0.83,
+    "currentA": 1.01,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T20:17:00Z",
+    "temperatureC": 23.21,
+    "vibration": 0.96,
+    "currentA": 2.85,
+    "healthScore": 98.7,
+    "failureProb": 0.036,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T20:27:00Z",
+    "temperatureC": 23.22,
+    "vibration": 0.56,
+    "currentA": 3.14,
+    "healthScore": 100.0,
+    "failureProb": 0.03,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T20:37:00Z",
+    "temperatureC": 24.28,
+    "vibration": 1.05,
+    "currentA": 5.68,
+    "healthScore": 96.4,
+    "failureProb": 0.045,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T20:47:00Z",
+    "temperatureC": 24.66,
+    "vibration": 1.29,
+    "currentA": 3.31,
+    "healthScore": 90.9,
+    "failureProb": 0.069,
+    "anomaly": 0
+  },
+  {
+    "tsUtc": "2025-10-12T20:57:00Z",
+    "temperatureC": 24.21,
+    "vibration": 1.09,
+    "currentA": 5.82,
+    "healthScore": 95.6,
+    "failureProb": 0.049,
+    "anomaly": 0
+  }
+]
