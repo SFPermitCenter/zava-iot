@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Azure IoT Hub — Fabrikam Factory (Demo)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    header { margin-bottom: 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); background: #fff; }
+    .col-6 { grid-column: span 6; }
+    .col-12 { grid-column: span 12; }
+    canvas { width:100% !important; height: 300px !important; }
+    footer { margin-top: 2rem; color: #6b7280; }
+    .source { font-size: 0.9rem; color: #6b7280; }
+    .tag { display:inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; background:#eef2ff; }
+    th, td { white-space: nowrap; }
+    code a { text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h2>Azure IoT Hub — Fabrikam Factory (Demo)</h2>
+      <p class="source">Source: Azure IoT Hub (mock, static). Endpoints documented at <code>/data/openapi.json</code>.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card col-12">
+        <h4>Fabrikam Factory Personas</h4>
+        <ul>
+          <li><strong>Joni Sherman</strong> — Production Supervisor (Assembly &amp; Machining)</li>
+          <li><strong>Adele Vance</strong> — QA Manager (Quality)</li>
+          <li><strong>Lee Gu</strong> — Maintenance Planner (Reliability &amp; Maintenance)</li>
+        </ul>
+      </div>
+
+      <div class="card col-6">
+        <h4>Health Score (latest) by Device</h4>
+        <canvas id="healthChart"></canvas>
+      </div>
+      <div class="card col-6">
+        <h4>Uptime (last 48h)</h4>
+        <canvas id="uptimeChart"></canvas>
+      </div>
+
+      <div class="card col-12">
+        <h4>Devices</h4>
+        <table id="devicesTable">
+          <thead>
+            <tr>
+              <th>Device ID</th><th>Name</th><th>Area</th><th>Model</th>
+              <th>Criticality</th><th>Installed</th><th>Health</th><th>Fail Prob</th><th>Anoms(48h)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <small>© Fabrikam — Demo “Art of the Possible”. Telemetry is synthetic.</small>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const DEVICES_URL = './data/devices.json';
+    const KPIS_URL = './data/kpis.json';
+
+    async function getJSON(url){
+      const r = await fetch(url+'?t='+Date.now());
+      if(!r.ok) throw new Error('Failed '+url);
+      return await r.json();
+    }
+
+    let healthChart, uptimeChart;
+    function upsertBar(chartRef, canvasId, label, labels, values, maxY){
+      if(!chartRef){
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        return new Chart(ctx, {
+          type: 'bar',
+          data: { labels, datasets: [{ label, data: values }]},
+          options: { responsive:true, scales: { y: { beginAtZero:true, suggestedMax: maxY } } }
+        });
+      } else {
+        chartRef.data.labels = labels;
+        chartRef.data.datasets[0].data = values;
+        chartRef.update();
+        return chartRef;
+      }
+    }
+
+    async function load(){
+      const [devices, kpis] = await Promise.all([getJSON(DEVICES_URL), getJSON(KPIS_URL)]);
+      const byId = Object.fromEntries(kpis.map(k => [k.deviceId, k]));
+
+      const labels = kpis.map(k => k.deviceId);
+      const health = kpis.map(k => k.healthScoreLatest);
+      const uptime = kpis.map(k => k.uptimePct_48h);
+
+      healthChart = upsertBar(healthChart, 'healthChart', 'Health Score', labels, health, 100);
+      uptimeChart = upsertBar(uptimeChart, 'uptimeChart', 'Uptime %', labels, uptime, 100);
+
+      const tbody = document.querySelector('#devicesTable tbody');
+      tbody.innerHTML = '';
+      devices.forEach(d => {
+        const k = byId[d.deviceId] || {};
+        const href = `./devices/${d.deviceId}.html`;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><code><a href="${href}">${d.deviceId}</a></code></td>
+          <td>${d.name}</td>
+          <td>${d.area}</td>
+          <td>${d.model}</td>
+          <td><span class="tag">${d.criticality}</span></td>
+          <td>${d.installDate}</td>
+          <td>${(k.healthScoreLatest ?? '').toFixed ? k.healthScoreLatest.toFixed(1) : k.healthScoreLatest}</td>
+          <td>${(k.failureProbLatest ?? '').toFixed ? k.failureProbLatest.toFixed(2) : k.failureProbLatest}</td>
+          <td>${k.anomalies_48h ?? ''}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    load();
+    setInterval(load, 30000);
+  </script>
+</body>
+</html>
