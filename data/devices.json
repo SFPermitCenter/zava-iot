@@ -1,0 +1,57 @@
+[
+  {
+    "deviceId": "A32",
+    "name": "CNC Lathe A32",
+    "area": "Assembly & Machining",
+    "model": "Okuma LB3000",
+    "criticality": "High",
+    "installed": "2021-05-14",
+    "health": 76,
+    "failProb": 0.18,
+    "anoms48h": 3
+  },
+  {
+    "deviceId": "WP-737",
+    "name": "Window Press WP-737",
+    "area": "Final Assembly",
+    "model": "HydraForm 737",
+    "criticality": "High",
+    "installed": "2020-11-03",
+    "health": 84,
+    "failProb": 0.12,
+    "anoms48h": 1
+  },
+  {
+    "deviceId": "SX-220",
+    "name": "Seal Extruder SX-220",
+    "area": "Elastomer",
+    "model": "Nordson 220",
+    "criticality": "Medium",
+    "installed": "2019-07-22",
+    "health": 88,
+    "failProb": 0.08,
+    "anoms48h": 0
+  },
+  {
+    "deviceId": "M-14",
+    "name": "5-Axis Mill M-14",
+    "area": "Machining Center",
+    "model": "Haas UMC-750",
+    "criticality": "High",
+    "installed": "2022-02-10",
+    "health": 91,
+    "failProb": 0.05,
+    "anoms48h": 0
+  },
+  {
+    "deviceId": "C5",
+    "name": "Conveyor C5",
+    "area": "Line 3",
+    "model": "Dorner 3200",
+    "criticality": "Low",
+    "installed": "2018-09-01",
+    "health": 95,
+    "failProb": 0.02,
+    "anoms48h": 0
+  }
+]
