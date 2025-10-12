@@ -1,0 +1,33 @@
+[
+  {
+    "workOrderId": "WO-20117",
+    "deviceId": "A32",
+    "type": "Preventive",
+    "priority": "High",
+    "status": "In Progress",
+    "createdDate": "2025-10-08",
+    "dueDate": "2025-10-12",
+    "description": "Replace spindle bearings; post-maintenance vibration baseline"
+  },
+  {
+    "workOrderId": "WO-20118",
+    "deviceId": "WP-737",
+    "type": "Corrective",
+    "priority": "Critical",
+    "status": "Open",
+    "createdDate": "2025-10-11",
+    "dueDate": "2025-10-13",
+    "description": "Investigate rising vibration on ram; check hydraulic seals"
+  },
+  {
+    "workOrderId": "WO-20119",
+    "deviceId": "CMP-2",
+    "type": "Inspection",
+    "priority": "Medium",
+    "status": "Closed",
+    "createdDate": "2025-09-29",
+    "dueDate": "2025-10-01",
+    "closedDate": "2025-09-30",
+    "description": "Quarterly compressor inspection; filter replacement"
+  }
+]
