@@ -1,0 +1,154 @@
+[
+  {
+    "deviceId": "HT-12",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 482.79,
+      "vibration": 1.8,
+      "currentA": 66.85,
+      "healthScore": 86.0,
+      "failureProb": 0.09,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "DR-8",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 34.87,
+      "vibration": 3.05,
+      "currentA": 13.08,
+      "healthScore": 94.3,
+      "failureProb": 0.055,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "CV-04",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 24.21,
+      "vibration": 1.09,
+      "currentA": 5.82,
+      "healthScore": 95.6,
+      "failureProb": 0.049,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "PK-210",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 28.14,
+      "vibration": 2.36,
+      "currentA": 9.45,
+      "healthScore": 89.3,
+      "failureProb": 0.076,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "WP-737",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 29.39,
+      "vibration": 3.14,
+      "currentA": 21.93,
+      "healthScore": 87.5,
+      "failureProb": 0.084,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "A32",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 32.98,
+      "vibration": 3.7,
+      "currentA": 26.61,
+      "healthScore": 88.3,
+      "failureProb": 0.08,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "QC-1",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 24.7,
+      "vibration": 0.71,
+      "currentA": 4.31,
+      "healthScore": 95.0,
+      "failureProb": 0.051,
+      "anomaly": 0
+    }
+  },
+  {
+    "deviceId": "CMP-2",
+    "enqueuedTimeUtc": "2025-10-12T20:57:00Z",
+    "properties": {
+      "source": "telemetry",
+      "schema": "v1"
+    },
+    "systemProperties": {
+      "iothub-message-source": "Telemetry"
+    },
+    "body": {
+      "temperatureC": 52.39,
+      "vibration": 5.17,
+      "currentA": 40.93,
+      "healthScore": 75.1,
+      "failureProb": 0.137,
+      "anomaly": 0
+    }
+  }
+]
