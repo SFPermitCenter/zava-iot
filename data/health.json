@@ -1,0 +1,7 @@
+[
+  { "deviceId": "A32", "name": "CNC Lathe A32", "health": 76 },
+  { "deviceId": "WP-737", "name": "Window Press WP-737", "health": 84 },
+  { "deviceId": "SX-220", "name": "Seal Extruder SX-220", "health": 88 },
+  { "deviceId": "M-14", "name": "5-Axis Mill M-14", "health": 91 },
+  { "deviceId": "C5", "name": "Conveyor C5", "health": 95 }
+]
