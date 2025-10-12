@@ -1,0 +1,29 @@
+{
+  "A32": [
+    { "timestamp": "2025-10-10T00:00:00Z", "uptimePct": 99.3 },
+    { "timestamp": "2025-10-10T12:00:00Z", "uptimePct": 94.8 },
+    { "timestamp": "2025-10-11T00:00:00Z", "uptimePct": 99.5 },
+    { "timestamp": "2025-10-12T00:00:00Z", "uptimePct": 99.6 }
+  ],
+  "WP-737": [
+    { "timestamp": "2025-10-10T00:00:00Z", "uptimePct": 99.8 },
+    { "timestamp": "2025-10-10T18:00:00Z", "uptimePct": 95.5 },
+    { "timestamp": "2025-10-11T12:00:00Z", "uptimePct": 99.7 },
+    { "timestamp": "2025-10-12T00:00:00Z", "uptimePct": 99.6 }
+  ],
+  "SX-220": [
+    { "timestamp": "2025-10-10T00:00:00Z", "uptimePct": 99.9 },
+    { "timestamp": "2025-10-11T00:00:00Z", "uptimePct": 99.9 },
+    { "timestamp": "2025-10-12T00:00:00Z", "uptimePct": 99.9 }
+  ],
+  "M-14": [
+    { "timestamp": "2025-10-10T00:00:00Z", "uptimePct": 99.8 },
+    { "timestamp": "2025-10-11T00:00:00Z", "uptimePct": 99.8 },
+    { "timestamp": "2025-10-12T00:00:00Z", "uptimePct": 99.8 }
+  ],
+  "C5": [
+    { "timestamp": "2025-10-10T00:00:00Z", "uptimePct": 99.95 },
+    { "timestamp": "2025-10-11T00:00:00Z", "uptimePct": 99.95 },
+    { "timestamp": "2025-10-12T00:00:00Z", "uptimePct": 99.95 }
+  ]
+}
