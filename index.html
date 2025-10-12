@@ -298,23 +298,31 @@
       }
     }
 
-    // ---------- Series loader (24h) ----------
-    async function loadSeriesFor(deviceId){
-      if(!deviceId){ return; }
-      const series = await getJSON(DATA.series(deviceId)).catch(()=>[]);
-      const labels = series.map(s => s.timestamp);
-      const vib = series.map(s => s.vibration ?? s.vib ?? null);
-      const temp = series.map(s => s.temperature ?? s.tempC ?? null);
+// ---------- Series loader (24h) ----------
+async function loadSeriesFor(deviceId){
+  if (!deviceId) return;
 
-      if(!vibChart) vibChart = mkLine('vibChart', labels, vib, 'Vibration (g)');
-      else updateLine(vibChart, labels, vib);
+  const series = await getJSON(DATA.series(deviceId)).catch(() => []);
 
-      if(!tempChart) tempChart = mkLine('tempChart', labels, temp, 'Temperature (°C)');
-      else updateLine(tempChart, labels, temp);
-    }
+  // your JSON uses tsUtc + temperatureC
+  const labels = series.map(s => s.timestamp ?? s.tsUtc ?? s.time ?? '');
+  const vib    = series.map(s => s.vibration ?? s.vib ?? null);
+  const temp   = series.map(s => s.temperature ?? s.temperatureC ?? s.tempC ?? null);
 
-    document.getElementById('seriesDevice').addEventListener('change', e => loadSeriesFor(e.target.value));
+  if (!vibChart)
+    vibChart = mkLine('vibChart', labels, vib, 'Vibration (g)');
+  else
+    updateLine(vibChart, labels, vib);
 
+  if (!tempChart)
+    tempChart = mkLine('tempChart', labels, temp, 'Temperature (°C)');
+  else
+    updateLine(tempChart, labels, temp);
+}
+
+document.getElementById('seriesDevice').addEventListener('change', e =>
+  loadSeriesFor(e.target.value)
+);
     // Initial + refresh
     loadAll();
     setInterval(loadAll, 30000);
