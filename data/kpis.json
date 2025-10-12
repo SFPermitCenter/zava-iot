@@ -1,0 +1,7 @@
+[
+  { "deviceId": "A32",   "healthScoreLatest": 76, "uptimePct_48h": 99.4, "failureProbLatest": 0.18, "anomalies_48h": 3 },
+  { "deviceId": "WP-737","healthScoreLatest": 84, "uptimePct_48h": 99.6, "failureProbLatest": 0.12, "anomalies_48h": 1 },
+  { "deviceId": "SX-220","healthScoreLatest": 88, "uptimePct_48h": 99.9, "failureProbLatest": 0.08, "anomalies_48h": 0 },
+  { "deviceId": "M-14",  "healthScoreLatest": 91, "uptimePct_48h": 99.8, "failureProbLatest": 0.05, "anomalies_48h": 0 },
+  { "deviceId": "C5",    "healthScoreLatest": 95, "uptimePct_48h": 99.95,"failureProbLatest": 0.02, "anomalies_48h": 0 }
+]
