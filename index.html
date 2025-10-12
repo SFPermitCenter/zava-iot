@@ -5,112 +5,319 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Azure IoT Hub — Fabrikam Factory</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
   <style>
-    header { margin-bottom: 1rem; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); background: #fff; }
+    :root { --muted:#6b7280; --chip-bg:#eef2ff; }
+    body { background:#f7f7f8; }
+    header { margin: 1rem 0 0.5rem; }
+    .grid { display:grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap:16px; }
+    .card { grid-column: span 12; border:1px solid #e5e7eb; border-radius:12px; padding:16px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.06); }
     .col-6 { grid-column: span 6; }
-    .col-12 { grid-column: span 12; }
-    canvas { width:100% !important; height: 300px !important; }
-    footer { margin-top: 2rem; color: #6b7280; }
-    .source { font-size: 0.9rem; color: #6b7280; }
-    .tag { display:inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; background:#eef2ff; }
-    th, td { white-space: nowrap; }
-    code a { text-decoration: none; }
+    .col-4 { grid-column: span 4; }
+    .source { color: var(--muted); font-size: .9rem; }
+    .tag { display:inline-flex; align-items:center; gap:6px; padding:2px 10px; border-radius:999px; font-size:12px; line-height:18px; border:1px solid transparent; }
+    table#devicesTable th, table#devicesTable td { white-space:nowrap; }
+    .chart-wrap { position:relative; height:320px; } /* lets Chart.js size the canvas crisply */
+    /* simple table scroller for long lists */
+    .table-scroll { overflow:auto; max-height:420px; }
   </style>
 </head>
 <body>
   <main class="container">
     <header>
       <h2>Azure IoT Hub — Fabrikam Factory</h2>
-      <p class="source">Source: Azure IoT Hub. Endpoints documented at <code>/data/openapi.json</code>.</p>
+      <p class="source">Source: Azure IoT Hub. Endpoints documented at <code>/data/openapi.json</code>. Last updated: <span id="lastUpdated">–</span></p>
     </header>
+
+    <section class="grid">
       <div class="card col-6">
         <h4>Health Score (latest) by Device</h4>
-        <canvas id="healthChart"></canvas>
+        <div class="chart-wrap"><canvas id="healthChart"></canvas></div>
       </div>
       <div class="card col-6">
         <h4>Uptime (last 48h)</h4>
-        <canvas id="uptimeChart"></canvas>
+        <div class="chart-wrap"><canvas id="uptimeChart"></canvas></div>
       </div>
 
       <div class="card col-12">
         <h4>Devices</h4>
-        <table id="devicesTable">
-          <thead>
-            <tr>
-              <th>Device ID</th><th>Name</th><th>Area</th><th>Model</th>
-              <th>Criticality</th><th>Installed</th><th>Health</th><th>Fail Prob</th><th>Anoms(48h)</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <div class="table-scroll">
+          <table id="devicesTable">
+            <thead>
+              <tr>
+                <th>Device ID</th><th>Name</th><th>Area</th><th>Model</th>
+                <th>Criticality</th><th>Installed</th><th>Health</th><th>Fail Prob</th><th>Anoms (48h)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card col-12">
+        <div class="grid">
+          <div class="col-4">
+            <h4>Alerts (active)</h4>
+            <div class="table-scroll">
+              <table id="alertsTable">
+                <thead>
+                  <tr><th>Time</th><th>Device</th><th>Type</th><th>Severity</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-4">
+            <h4>Latest Telemetry</h4>
+            <div class="table-scroll">
+              <table id="telemetryTable">
+                <thead>
+                  <tr><th>Time</th><th>Device</th><th>Vibration (g)</th><th>Temp (°C)</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-4">
+            <h4>Work Orders</h4>
+            <div class="table-scroll">
+              <table id="workTable">
+                <thead>
+                  <tr><th>WO #</th><th>Device</th><th>Issue</th><th>Status</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card col-12">
+        <div class="grid">
+          <div class="col-4">
+            <h4>Series (24h) — Select Device</h4>
+            <select id="seriesDevice" aria-label="Device for series">
+              <option value="">Choose a device…</option>
+            </select>
+            <p class="source">Loads <code>/data/series/&lt;deviceId&gt;_24h.json</code></p>
+          </div>
+          <div class="col-4">
+            <h4>Vibration (g)</h4>
+            <div class="chart-wrap"><canvas id="vibChart"></canvas></div>
+          </div>
+          <div class="col-4">
+            <h4>Temperature (°C)</h4>
+            <div class="chart-wrap"><canvas id="tempChart"></canvas></div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <footer class="source">Auto-refreshes every 30s.</footer>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const DEVICES_URL = './data/devices.json';
-    const KPIS_URL = './data/kpis.json';
+    // ---------- Config / Endpoints ----------
+    const DATA = {
+      devices: './data/devices.json',
+      kpis: './data/kpis.json',
+      uptime: './data/uptime.json',                // optional (we still read uptime from KPIs if present)
+      alerts: './data/alerts.json',
+      telemetryLatest: './data/telemetry_latest.json',
+      workOrders: './data/work_orders.json',
+      series: (id) => `./data/series/${id}_24h.json`
+    };
 
+    // ---------- Utilities ----------
     async function getJSON(url){
-      const r = await fetch(url+'?t='+Date.now());
-      if(!r.ok) throw new Error('Failed '+url);
-      return await r.json();
+      const r = await fetch(url + (url.includes('?') ? '&' : '?') + 't=' + Date.now());
+      if(!r.ok) throw new Error('Failed ' + url);
+      return r.json();
     }
 
-    let healthChart, uptimeChart;
-    function upsertBar(chartRef, canvasId, label, labels, values, maxY){
-      if(!chartRef){
-        const ctx = document.getElementById(canvasId).getContext('2d');
-        return new Chart(ctx, {
-          type: 'bar',
-          data: { labels, datasets: [{ label, data: values }]},
-          options: { responsive:true, scales: { y: { beginAtZero:true, suggestedMax: maxY } } }
-        });
-      } else {
-        chartRef.data.labels = labels;
-        chartRef.data.datasets[0].data = values;
-        chartRef.update();
-        return chartRef;
-      }
+    const CRIT_COLORS = {
+      High:   '#E5546D',   // red/pink
+      Medium: '#F4B400',   // amber
+      Low:    '#5B9BD5'    // blue
+    };
+
+    function hexToRgba(hex, alpha = 0.16) {
+      const h = hex.replace('#','');
+      const bigint = parseInt(h, 16);
+      const r = (bigint >> 16) & 255;
+      const g = (bigint >> 8) & 255;
+      const b = bigint & 255;
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     }
 
-    async function load(){
-      const [devices, kpis] = await Promise.all([getJSON(DEVICES_URL), getJSON(KPIS_URL)]);
+    function critColor(d){
+      // prefer color embedded in JSON, else map by criticality
+      return d.criticalityColor || CRIT_COLORS[d.criticality] || '#94a3b8';
+    }
+
+    // ---------- Charts ----------
+    Chart.defaults.font.family = 'Segoe UI, system-ui, -apple-system, Arial';
+    Chart.defaults.font.size = 12;
+    Chart.defaults.plugins.legend.display = false;
+    let healthChart, uptimeChart, vibChart, tempChart;
+
+    function mkBar(canvasId, labels, values, label, maxY){
+      const ctx = document.getElementById(canvasId).getContext('2d');
+      return new Chart(ctx, {
+        type: 'bar',
+        data: { labels, datasets: [{ label, data: values, borderWidth:1 }]},
+        options: {
+          responsive:true,
+          maintainAspectRatio:false,
+          scales: { y: { beginAtZero:true, suggestedMax:maxY } }
+        }
+      });
+    }
+    function mkLine(canvasId, labels, values, label){
+      const ctx = document.getElementById(canvasId).getContext('2d');
+      return new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets: [{ label, data: values, tension:.25, pointRadius:0, borderWidth:2 }]},
+        options: { responsive:true, maintainAspectRatio:false, scales:{ x:{ ticks:{ maxTicksLimit:6 }}, y:{ beginAtZero:false } } }
+      });
+    }
+
+    function updateBar(chart, labels, values){
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = values;
+      chart.update();
+    }
+    function updateLine(chart, labels, values){
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = values;
+      chart.update();
+    }
+
+    // ---------- Page Load ----------
+    let DEVICES = [];
+    async function loadAll(){
+      const ts = new Date().toLocaleTimeString();
+      document.getElementById('lastUpdated').textContent = ts;
+
+      // pull everything we need
+      const [devices, kpis, alerts, tlm, work] = await Promise.all([
+        getJSON(DATA.devices),
+        getJSON(DATA.kpis),
+        getJSON(DATA.alerts).catch(()=>[]),
+        getJSON(DATA.telemetryLatest).catch(()=>[]),
+        getJSON(DATA.workOrders).catch(()=>[])
+      ]);
+      DEVICES = devices;
+
+      // --- Charts: Health + Uptime
       const byId = Object.fromEntries(kpis.map(k => [k.deviceId, k]));
-
       const labels = kpis.map(k => k.deviceId);
-      const health = kpis.map(k => k.healthScoreLatest);
-      const uptime = kpis.map(k => k.uptimePct_48h);
+      const health = kpis.map(k => k.healthScoreLatest ?? k.health ?? 0);
+      const uptime = kpis.map(k => (k.uptimePct_48h ?? k.uptimePct ?? 0));
 
-      healthChart = upsertBar(healthChart, 'healthChart', 'Health Score', labels, health, 100);
-      uptimeChart = upsertBar(uptimeChart, 'uptimeChart', 'Uptime %', labels, uptime, 100);
+      if(!healthChart) healthChart = mkBar('healthChart', labels, health, 'Health', 100);
+      else updateBar(healthChart, labels, health);
 
+      if(!uptimeChart) uptimeChart = mkBar('uptimeChart', labels, uptime, 'Uptime %', 100);
+      else updateBar(uptimeChart, labels, uptime);
+
+      // --- Devices table
       const tbody = document.querySelector('#devicesTable tbody');
       tbody.innerHTML = '';
       devices.forEach(d => {
         const k = byId[d.deviceId] || {};
         const href = `./devices/${d.deviceId}.html`;
+        const color = critColor(d);
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td><code><a href="${href}">${d.deviceId}</a></code></td>
+          <td><code><a href="${href}" title="Open ${d.deviceId}">${d.deviceId}</a></code></td>
           <td>${d.name}</td>
           <td>${d.area}</td>
           <td>${d.model}</td>
-          <td><span class="tag">${d.criticality}</span></td>
-          <td>${d.installed}</td>
-          <td>${(k.healthScoreLatest ?? '').toFixed ? k.healthScoreLatest.toFixed(1) : k.healthScoreLatest}</td>
-          <td>${(k.failureProbLatest ?? '').toFixed ? k.failureProbLatest.toFixed(2) : k.failureProbLatest}</td>
-          <td>${k.anomalies_48h ?? ''}</td>
+          <td><span class="tag" style="color:${color}; border-color:${color}; background:${hexToRgba(color)}">${d.criticality}</span></td>
+          <td>${d.installed ?? '—'}</td>
+          <td>${(k.healthScoreLatest ?? '').toFixed ? (k.healthScoreLatest).toFixed(1) : (k.healthScoreLatest ?? '—')}</td>
+          <td>${(k.failureProbLatest ?? '').toFixed ? (k.failureProbLatest).toFixed(2) : (k.failureProbLatest ?? '—')}</td>
+          <td>${k.anomalies_48h ?? '—'}</td>
         `;
         tbody.appendChild(tr);
       });
+
+      // --- Alerts table
+      const aBody = document.querySelector('#alertsTable tbody');
+      aBody.innerHTML = '';
+      (alerts || []).forEach(a => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${a.timestamp ?? a.time ?? ''}</td>
+          <td><code>${a.deviceId ?? ''}</code></td>
+          <td>${a.type ?? a.alertType ?? ''}</td>
+          <td>${a.severity ?? ''}</td>
+        `;
+        aBody.appendChild(tr);
+      });
+
+      // --- Telemetry latest
+      const tBody = document.querySelector('#telemetryTable tbody');
+      tBody.innerHTML = '';
+      (tlm || []).forEach(t => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${t.timestamp ?? ''}</td>
+          <td><code>${t.deviceId ?? ''}</code></td>
+          <td>${(t.vibration ?? t.vib ?? '').toString()}</td>
+          <td>${(t.temperature ?? t.tempC ?? '').toString()}</td>
+        `;
+        tBody.appendChild(tr);
+      });
+
+      // --- Work orders
+      const wBody = document.querySelector('#workTable tbody');
+      wBody.innerHTML = '';
+      (work || []).forEach(w => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${w.workOrderId ?? w.id ?? ''}</td>
+          <td><code>${w.deviceId ?? ''}</code></td>
+          <td>${w.issue ?? w.description ?? ''}</td>
+          <td>${w.status ?? ''}</td>
+        `;
+        wBody.appendChild(tr);
+      });
+
+      // --- Series dropdown options
+      const dd = document.getElementById('seriesDevice');
+      if(dd.options.length <= 1){
+        devices.forEach(d => {
+          const opt = document.createElement('option');
+          opt.value = d.deviceId;
+          opt.textContent = `${d.deviceId} — ${d.name}`;
+          dd.appendChild(opt);
+        });
+      }
     }
 
-    load();
-    setInterval(load, 30000);
+    // ---------- Series loader (24h) ----------
+    async function loadSeriesFor(deviceId){
+      if(!deviceId){ return; }
+      const series = await getJSON(DATA.series(deviceId)).catch(()=>[]);
+      const labels = series.map(s => s.timestamp);
+      const vib = series.map(s => s.vibration ?? s.vib ?? null);
+      const temp = series.map(s => s.temperature ?? s.tempC ?? null);
+
+      if(!vibChart) vibChart = mkLine('vibChart', labels, vib, 'Vibration (g)');
+      else updateLine(vibChart, labels, vib);
+
+      if(!tempChart) tempChart = mkLine('tempChart', labels, temp, 'Temperature (°C)');
+      else updateLine(tempChart, labels, temp);
+    }
+
+    document.getElementById('seriesDevice').addEventListener('change', e => loadSeriesFor(e.target.value));
+
+    // Initial + refresh
+    loadAll();
+    setInterval(loadAll, 30000);
   </script>
 </body>
 </html>
