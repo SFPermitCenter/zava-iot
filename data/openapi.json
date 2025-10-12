@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Fabrikam Factory Demo Data API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/data/devices.json": {
+      "get": {
+        "summary": "Device inventory with health/failure risk/anomalies (last 48h)",
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/data/health.json": {
+      "get": {
+        "summary": "Latest health score by device",
+        "responses": { "200": { "description": "OK" } }
+      }
+    },
+    "/data/uptime.json": {
+      "get": {
+        "summary": "Uptime percentage by device for last 48 hours (hourly)",
+        "responses": { "200": { "description": "OK" } }
+      }
+    }
+  }
+}
