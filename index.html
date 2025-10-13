@@ -327,5 +327,83 @@ document.getElementById('seriesDevice').addEventListener('change', e =>
     loadAll();
     setInterval(loadAll, 30000);
   </script>
+  <script>
+async function loadJSON(url){ const r = await fetch(url); return r.json(); }
+
+// ---- Normalizers (handle multiple possible field names) ----
+const pick = (o, ...keys) => keys.find(k => o?.[k] != null) ? o[keys.find(k => o?.[k] != null)] : undefined;
+const num = v => (v == null ? "" : (Math.round(Number(v) * 100) / 100));
+
+function normTime(d){
+  return pick(d, "time","timestamp","enqueuedTimeUtc","eventTime") 
+      || pick(d.body||{}, "time","timestamp") || "";
+}
+function normDevice(d){
+  return pick(d, "deviceId","device","eqp","equipmentId") || "";
+}
+function normVibration(d){
+  return num(pick(d, "vibration") ?? pick(d.body||{}, "vibration"));
+}
+function normTempC(d){
+  const c = pick(d, "temperatureC","tempC") ?? pick((d.body||{}), "temperatureC","tempC");
+  if (c != null) return num(c);
+  const f = pick(d, "temperatureF","tempF") ?? pick((d.body||{}), "temperatureF","tempF");
+  return f != null ? num((Number(f)-32)*5/9) : "";
+}
+
+// ---- Render Latest Telemetry ----
+async function renderTelemetry(){
+  // use your configured path; if you switched to the flat file, point to that
+  const data = await loadJSON('./data/telemetry_latest.json'); // or telemetry_latest_flat.json
+  const rows = data.map(d => ({
+    time: normTime(d),
+    device: normDevice(d),
+    vibration: normVibration(d),
+    temperatureC: normTempC(d)
+  }));
+
+  const tbody = document.querySelector('#telemetryTable tbody');
+  if (!tbody) return;
+  tbody.innerHTML = "";
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.time}</td>
+      <td><span class="tag">${r.device}</span></td>
+      <td>${r.vibration}</td>
+      <td>${r.temperatureC}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+// ---- Render Alerts (active) ----
+async function renderAlerts(){
+  const data = await loadJSON('./data/alerts_active.json'); // adjust if your path differs
+  const rows = data.map(d => ({
+    time: normTime(d),
+    device: normDevice(d),
+    type: pick(d, "type","alertType","category","code") || "",
+    severity: pick(d, "severity","level") || ""
+  }));
+
+  const tbody = document.querySelector('#alertsTable tbody');
+  if (!tbody) return;
+  tbody.innerHTML = "";
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.time}</td>
+      <td><span class="tag">${r.device}</span></td>
+      <td>${r.type}</td>
+      <td>${r.severity}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+renderTelemetry();
+renderAlerts();
+</script>
 </body>
 </html>
