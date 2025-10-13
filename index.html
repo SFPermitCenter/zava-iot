@@ -379,7 +379,7 @@ async function renderTelemetry(){
 
 // ---- Render Alerts (active) ----
 async function renderAlerts(){
-  const data = await loadJSON('./data/alerts_active.json'); // adjust if your path differs
+  const data = await loadJSON('./data/alerts.json'); // adjust if your path differs
   const rows = data.map(d => ({
     time: normTime(d),
     device: normDevice(d),
