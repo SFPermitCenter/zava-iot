@@ -353,8 +353,8 @@ function normTempC(d){
 
 // ---- Render Latest Telemetry ----
 async function renderTelemetry(){
-  // use your configured path; if you switched to the flat file, point to that
-  const data = await loadJSON('./data/telemetry_latest.json'); // or telemetry_latest_flat.json
+
+  const data = await loadJSON('./data/telemetry_latest_flat');
   const rows = data.map(d => ({
     time: normTime(d),
     device: normDevice(d),
