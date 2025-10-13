@@ -1,7 +1,7 @@
 [
   {
     "alertId": "AL-00001",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "A32",
     "summary": "A32 health=88.3 vib=3.7 mm/s temp=32.98\u00b0C",
     "failureProb": 0.08,
@@ -9,7 +9,7 @@
   },
   {
     "alertId": "AL-00002",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "HT-12",
     "summary": "HT-12 health=86.0 vib=1.8 mm/s temp=482.79\u00b0C",
     "failureProb": 0.09,
@@ -17,7 +17,7 @@
   },
   {
     "alertId": "AL-00003",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "DR-8",
     "summary": "DR-8 health=94.3 vib=3.05 mm/s temp=34.87\u00b0C",
     "failureProb": 0.055,
@@ -25,7 +25,7 @@
   },
   {
     "alertId": "AL-00004",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "CV-04",
     "summary": "CV-04 health=95.6 vib=1.09 mm/s temp=24.21\u00b0C",
     "failureProb": 0.049,
@@ -33,7 +33,7 @@
   },
   {
     "alertId": "AL-00005",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "PK-210",
     "summary": "PK-210 health=89.3 vib=2.36 mm/s temp=28.14\u00b0C",
     "failureProb": 0.076,
@@ -41,7 +41,7 @@
   },
   {
     "alertId": "AL-00006",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "WP-737",
     "summary": "WP-737 health=87.5 vib=3.14 mm/s temp=29.39\u00b0C",
     "failureProb": 0.084,
@@ -49,7 +49,7 @@
   },
   {
     "alertId": "AL-00007",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "QC-1",
     "summary": "QC-1 health=95.0 vib=0.71 mm/s temp=24.7\u00b0C",
     "failureProb": 0.051,
@@ -57,7 +57,7 @@
   },
   {
     "alertId": "AL-00008",
-    "timestampUtc": "2025-10-12T20:57:00Z",
+    "time": "2025-10-12T20:57:00Z",
     "deviceId": "CMP-2",
     "summary": "CMP-2 health=75.1 vib=5.17 mm/s temp=52.39\u00b0C",
     "failureProb": 0.137,
