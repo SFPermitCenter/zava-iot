@@ -1,0 +1,50 @@
+[
+  {
+    "deviceId": "A32",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 3.7,
+    "temperatureC": 32.98
+  },
+  {
+    "deviceId": "CMP-2",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 5.17,
+    "temperatureC": 52.39
+  },
+  {
+    "deviceId": "CV-04",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 1.09,
+    "temperatureC": 24.21
+  },
+  {
+    "deviceId": "DR-8",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 3.05,
+    "temperatureC": 34.87
+  },
+  {
+    "deviceId": "HT-12",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 1.8,
+    "temperatureC": 482.79
+  },
+  {
+    "deviceId": "PK-210",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 2.36,
+    "temperatureC": 28.14
+  },
+  {
+    "deviceId": "QC-1",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 0.71,
+    "temperatureC": 24.7
+  },
+  {
+    "deviceId": "WP-737",
+    "time": "2025-10-12T20:57:00Z",
+    "vibration": 3.14,
+    "temperatureC": 29.39
+  }
+]
