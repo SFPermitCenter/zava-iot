@@ -61,7 +61,7 @@
             <div class="table-scroll">
               <table id="alertsTable">
                 <thead>
-                  <tr><th>Time</th><th>Device</th><th>Type</th><th>Severity</th></tr>
+                  <tr><th>Time</th><th>Device</th><th>Severity</th></tr>
                 </thead>
                 <tbody></tbody>
               </table>
@@ -383,7 +383,6 @@ async function renderAlerts(){
   const rows = data.map(d => ({
     time: normTime(d),
     device: normDevice(d),
-    type: pick(d, "type","alertType","category","code") || "",
     severity: pick(d, "severity","level") || ""
   }));
 
@@ -395,7 +394,6 @@ async function renderAlerts(){
     tr.innerHTML = `
       <td>${r.time}</td>
       <td><span class="tag">${r.device}</span></td>
-      <td>${r.type}</td>
       <td>${r.severity}</td>
     `;
     tbody.appendChild(tr);
