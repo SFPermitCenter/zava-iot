@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Fabrikam Factory Demo Data API",
+    "title": "Azure IoT Hub — Zava Factory",
     "version": "1.0.0"
   },
   "paths": {
