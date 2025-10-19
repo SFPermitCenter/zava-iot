@@ -111,6 +111,29 @@
           </div>
         </div>
       </div>
+            <!-- B17 SPC: start -->
+      <div class="card col-12">
+        <h4>SPC — Machine B17 (Precision Milling)</h4>
+        <div style="position:relative;max-width:900px;margin:auto;">
+          <canvas id="spc-b17" height="260"></canvas>
+
+          <!-- Trey-style callout -->
+          <div id="b17-callout" style="
+              position:absolute; top:8px; right:8px;
+              background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+              padding:10px 12px; font:500 13px/1.3 Segoe UI,system-ui,sans-serif;
+              box-shadow:0 2px 8px rgba(0,0,0,.06)">
+            <div style="font-weight:600; margin-bottom:4px;">
+              Machine B17 — Tolerance out of band
+            </div>
+            <div style="font-size:12px;">
+              Quality Agent detected part alignment issue (Supplier 23C).<br>
+              Suggested fix: <strong>Change tool tip</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- B17 SPC: end -->
     </section>
 
     <footer class="source">Auto-refreshes every 30s.</footer>
@@ -401,6 +424,66 @@ async function renderAlerts(){
 
 renderTelemetry();
 renderAlerts();
+</script>
+  <!-- Chart.js (already loaded above, so skip if duplicate) -->
+<script>
+(async function () {
+  const res = await fetch('./data/series/B17_spc.json');
+  const rows = await res.json();
+
+  const labels = rows.map(r => new Date(r.timestamp)
+      .toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}));
+  const values = rows.map(r => r.measurement);
+  const CL = rows[0].cl, UCL = rows[0].ucl, LCL = rows[0].lcl;
+
+  const flatLine = y => rows.map(() => y);
+  const oocIdx = rows
+      .map((r,i)=> (r.outOfControl ? i : -1))
+      .filter(i=> i>=0);
+
+  const ctx = document.getElementById('spc-b17').getContext('2d');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        { label:'Measurement', data:values, tension:.25, borderWidth:1.5,
+          pointRadius:3, borderColor:'#2563eb' },
+        { label:'CL', data:flatLine(CL), borderDash:[6,6], borderWidth:1,
+          pointRadius:0, borderColor:'#6b7280' },
+        { label:'UCL', data:flatLine(UCL), borderDash:[6,6], borderWidth:1,
+          pointRadius:0, borderColor:'#dc2626' },
+        { label:'LCL', data:flatLine(LCL), borderDash:[6,6], borderWidth:1,
+          pointRadius:0, borderColor:'#dc2626' },
+        { label:'Out of Control', type:'scatter',
+          data:oocIdx.map(i=>({x:labels[i], y:values[i]})),
+          pointStyle:'cross', pointRadius:6, borderWidth:2,
+          borderColor:'#dc2626' }
+      ]
+    },
+    options: {
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          callbacks:{
+            afterBody:(items)=>{
+              const i = items[0].dataIndex;
+              const r = rows[i];
+              const status = r.outOfControl
+                ? 'OUT OF BAND – suspected alignment (23C)'
+                : 'In control';
+              return `${status}\nVibration: ${r.vibration.toFixed(2)} g  Coolant: ${r.coolantTemp.toFixed(1)} °C`;
+            }
+          }
+        }
+      },
+      scales:{
+        y:{title:{display:true,text:'Measurement Value'}},
+        x:{title:{display:true,text:'Sample Time'}}
+      }
+    }
+  });
+})();
 </script>
 </body>
 </html>
