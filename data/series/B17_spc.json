@@ -1,0 +1,28 @@
+[
+  { "timestamp": "2025-10-13T08:00:00Z", "measurement": 50.6, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.62, "coolantTemp": 18.7 },
+  { "timestamp": "2025-10-13T08:10:00Z", "measurement": 49.8, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.65, "coolantTemp": 18.8 },
+  { "timestamp": "2025-10-13T08:20:00Z", "measurement": 50.2, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.66, "coolantTemp": 19.0 },
+  { "timestamp": "2025-10-13T08:30:00Z", "measurement": 51.1, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.69, "coolantTemp": 19.2 },
+  { "timestamp": "2025-10-13T08:40:00Z", "measurement": 49.9, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.71, "coolantTemp": 19.4 },
+  { "timestamp": "2025-10-13T08:50:00Z", "measurement": 50.4, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.73, "coolantTemp": 19.6 },
+  { "timestamp": "2025-10-13T09:00:00Z", "measurement": 49.7, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.74, "coolantTemp": 19.8 },
+  { "timestamp": "2025-10-13T09:10:00Z", "measurement": 50.8, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.76, "coolantTemp": 20.1 },
+  { "timestamp": "2025-10-13T09:20:00Z", "measurement": 50.1, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.78, "coolantTemp": 20.3 },
+  { "timestamp": "2025-10-13T09:30:00Z", "measurement": 51.0, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.80, "coolantTemp": 20.5 },
+  { "timestamp": "2025-10-13T09:40:00Z", "measurement": 49.5, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.82, "coolantTemp": 20.7 },
+  { "timestamp": "2025-10-13T09:50:00Z", "measurement": 49.9, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.85, "coolantTemp": 20.9 },
+  { "timestamp": "2025-10-13T10:00:00Z", "measurement": 50.3, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.88, "coolantTemp": 21.1 },
+  { "timestamp": "2025-10-13T10:10:00Z", "measurement": 49.6, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.91, "coolantTemp": 21.4 },
+  { "timestamp": "2025-10-13T10:20:00Z", "measurement": 49.8, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.95, "coolantTemp": 21.6 },
+  { "timestamp": "2025-10-13T10:30:00Z", "measurement": 48.9, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 0.99, "coolantTemp": 21.8 },
+  { "timestamp": "2025-10-13T10:40:00Z", "measurement": 49.1, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.05, "coolantTemp": 22.0 },
+  { "timestamp": "2025-10-13T10:50:00Z", "measurement": 48.7, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.10, "coolantTemp": 22.2 },
+  { "timestamp": "2025-10-13T11:00:00Z", "measurement": 49.2, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.16, "coolantTemp": 22.5 },
+  { "timestamp": "2025-10-13T11:10:00Z", "measurement": 49.4, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.20, "coolantTemp": 22.7 },
+
+  { "timestamp": "2025-10-13T11:20:00Z", "measurement": 54.7, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": true,  "vibration": 1.28, "coolantTemp": 23.1 },
+  { "timestamp": "2025-10-13T11:30:00Z", "measurement": 53.0, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.25, "coolantTemp": 23.0 },
+  { "timestamp": "2025-10-13T11:40:00Z", "measurement": 53.2, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.23, "coolantTemp": 22.9 },
+  { "timestamp": "2025-10-13T11:50:00Z", "measurement": 52.8, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.20, "coolantTemp": 22.8 },
+  { "timestamp": "2025-10-13T12:00:00Z", "measurement": 52.3, "cl": 50.0, "ucl": 53.3, "lcl": 46.7, "outOfControl": false, "vibration": 1.15, "coolantTemp": 22.6 }
+]
