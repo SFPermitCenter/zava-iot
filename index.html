@@ -461,27 +461,27 @@ renderAlerts();
           borderColor:'#dc2626' }
       ]
     },
-    options: {
-      plugins:{
-        legend:{display:false},
-        tooltip:{
-          callbacks:{
-            afterBody:(items)=>{
-              const i = items[0].dataIndex;
-              const r = rows[i];
-              const status = r.outOfControl
-                ? 'OUT OF BAND – suspected alignment (23C)'
-                : 'In control';
-              return `${status}\nVibration: ${r.vibration.toFixed(2)} g  Coolant: ${r.coolantTemp.toFixed(1)} °C`;
-            }
-          }
-        }
-      },
-      scales:{
-        y:{title:{display:true,text:'Measurement Value'}},
-        x:{title:{display:true,text:'Sample Time'}}
+  options: {
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          title: () => '', // removes the timestamp title
+          label: () => 'Machine B17 — Tolerance out of band.'
+        },
+        backgroundColor: 'rgba(0,0,0,0.8)',
+        titleColor: '#fff',
+        bodyColor: '#fff',
+        padding: 8,
+        displayColors: false,
+        cornerRadius: 6
       }
+    },
+    scales: {
+      y: { title: { display: true, text: 'Measurement Value' } },
+      x: { title: { display: true, text: 'Sample Time' } }
     }
+  }
   });
 })();
 </script>
