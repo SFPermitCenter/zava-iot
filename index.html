@@ -410,65 +410,82 @@ async function renderAlerts(){
 renderTelemetry();
 renderAlerts();
 </script>
-  <!-- Chart.js 
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<canvas id="spc-b17" style="width:100%; height:320px"></canvas>
+
 <script>
 (async function () {
-  const res = await fetch('./data/series/B17_spc.json');
-  const rows = await res.json();
+  // 1) Load data
+  let rows;
+  try {
+    const res = await fetch('./data/series/B17_spc.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Fetch failed: ${res.status} ${res.statusText}`);
+    rows = await res.json();
+    if (!Array.isArray(rows) || rows.length === 0) throw new Error('Empty or invalid JSON array');
+  } catch (err) {
+    console.error('[SPC] Data load error:', err);
+    return;
+  }
 
-  const labels = rows.map(r => new Date(r.timestamp)
-      .toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}));
+  // 2) Prep series
+  const labels = rows.map(r =>
+    new Date(r.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+  );
   const values = rows.map(r => r.measurement);
   const CL = rows[0].cl, UCL = rows[0].ucl, LCL = rows[0].lcl;
 
   const flatLine = y => rows.map(() => y);
-  const oocIdx = rows
-      .map((r,i)=> (r.outOfControl ? i : -1))
-      .filter(i=> i>=0);
+  const oocPoints = rows
+    .map((r, i) => r.outOfControl ? { x: labels[i], y: values[i] } : null)
+    .filter(Boolean);
 
-  const ctx = document.getElementById('spc-b17').getContext('2d');
+  // 3) Render chart
+  const cv = document.getElementById('spc-b17');
+  if (!cv) { console.error('[SPC] Missing <canvas id="spc-b17">'); return; }
+  const ctx = cv.getContext('2d');
+
   new Chart(ctx, {
     type: 'line',
     data: {
       labels,
       datasets: [
-        { label:'Measurement', data:values, tension:.25, borderWidth:1.5,
-          pointRadius:3, borderColor:'#2563eb' },
-        { label:'CL', data:flatLine(CL), borderDash:[6,6], borderWidth:1,
-          pointRadius:0, borderColor:'#6b7280' },
-        { label:'UCL', data:flatLine(UCL), borderDash:[6,6], borderWidth:1,
-          pointRadius:0, borderColor:'#dc2626' },
-        { label:'LCL', data:flatLine(LCL), borderDash:[6,6], borderWidth:1,
-          pointRadius:0, borderColor:'#dc2626' },
-        { label:'Out of Control', type:'scatter',
-          data:oocIdx.map(i=>({x:labels[i], y:values[i]})),
-          pointStyle:'cross', pointRadius:6, borderWidth:2,
-          borderColor:'#dc2626' }
+        { label: 'Measurement', data: values, tension: .25, borderWidth: 1.5,
+          pointRadius: 3, borderColor: '#2563eb' },
+        { label: 'CL',  data: flatLine(CL),  borderDash: [6,6], borderWidth: 1,
+          pointRadius: 0, borderColor: '#6b7280' },
+        { label: 'UCL', data: flatLine(UCL), borderDash: [6,6], borderWidth: 1,
+          pointRadius: 0, borderColor: '#dc2626' },
+        { label: 'LCL', data: flatLine(LCL), borderDash: [6,6], borderWidth: 1,
+          pointRadius: 0, borderColor: '#dc2626' },
+        { label: 'Out of Control', type: 'scatter', data: oocPoints,
+          pointStyle: 'cross', pointRadius: 6, borderWidth: 2, borderColor: '#dc2626' }
       ]
     },
-  options: {
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          title: () => '', 
-          label: () => 'Machine B17 — Tolerance out of band.'
-        },
-        backgroundColor: 'rgba(0,0,0,0.8)',
-        titleColor: '#fff',
-        bodyColor: '#fff',
-        padding: 8,
-        displayColors: false,
-        cornerRadius: 6
+    options: {
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            // Only customize tooltip for the OOC dataset
+            label: (ctx) => ctx.dataset.label === 'Out of Control'
+              ? 'Machine B17 — Tolerance out of band.'
+              : `${ctx.dataset.label}: ${ctx.parsed.y}`
+          },
+          title: () => '',
+          backgroundColor: 'rgba(0,0,0,0.8)',
+          bodyColor: '#fff',
+          padding: 8,
+          displayColors: false,
+          cornerRadius: 6
+        }
+      },
+      scales: {
+        y: { title: { display: true, text: 'Measurement Value' } },
+        x: { title: { display: true, text: 'Time' } }
       }
-    },
-    scales: {
-      y: { title: { display: true, text: 'Measurement Value' } },
-      x: { title: { display: true, text: 'Time' } }
     }
-  }
   });
 })();
 </script>
-</body>
-</html>
