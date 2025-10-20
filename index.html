@@ -386,7 +386,7 @@ async function renderTelemetry(){
 
 // ---- Render Alerts (active) ----
 async function renderAlerts(){
-  const data = await loadJSON('./data/alerts.json'); // adjust if your path differs
+  const data = await loadJSON('./data/alerts.json'); 
   const rows = data.map(d => ({
     time: normTime(d),
     device: normDevice(d),
@@ -410,7 +410,7 @@ async function renderAlerts(){
 renderTelemetry();
 renderAlerts();
 </script>
-  <!-- Chart.js (already loaded above, so skip if duplicate) -->
+  <!-- Chart.js 
 <script>
 (async function () {
   const res = await fetch('./data/series/B17_spc.json');
@@ -451,7 +451,7 @@ renderAlerts();
       legend: { display: false },
       tooltip: {
         callbacks: {
-          title: () => '', // removes the timestamp title
+          title: () => '', 
           label: () => 'Machine B17 — Tolerance out of band.'
         },
         backgroundColor: 'rgba(0,0,0,0.8)',
@@ -464,7 +464,7 @@ renderAlerts();
     },
     scales: {
       y: { title: { display: true, text: 'Measurement Value' } },
-      x: { title: { display: true, text: 'Sample Time' } }
+      x: { title: { display: true, text: 'Time' } }
     }
   }
   });
