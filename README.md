@@ -1,4 +1,4 @@
-# Fabrikam Azure IoT Hub (Demo) — with Device Pages
+# Zava IoT Hub — with Device Pages
 
 Static GitHub Pages site that *looks* like an Azure IoT Hub portal for demo purposes.
 
